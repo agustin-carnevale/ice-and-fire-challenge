@@ -30,7 +30,7 @@ export async function fetchHouses(
       lastPage: parsedLinks?.last?.page,
     };
   } catch (error) {
-    throw new Error(`Error: could not fetch page ${page} of houses`);
+    throw new Error(`Could not fetch page ${page} of houses. ${error}`);
   }
 }
 
@@ -41,6 +41,6 @@ export async function fetchCharacter(url: string): Promise<Character> {
 
     return character;
   } catch (error) {
-    throw new Error(`Error: could not fetch character at ${url}`);
+    throw new Error(`Could not fetch character at ${url}. ${error}`);
   }
 }
